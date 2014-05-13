@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	notify = require('gulp-notify'),
 	gutil = require('gulp-util'),
+	shell = require('gulp-shell'),
 	//Paths
 	sassSrc = 'src/scss/prototype.scss',
 	cssDest = 'target/css',
@@ -99,15 +100,3 @@ gulp.task('default', ['clean'], function() {
 	gulp.start('scripts-vendor');
 });
 
-// Watch
-gulp.task('watch', function() {
-	gulp.start('default');
-
-	// Watch .scss files
-	gulp.watch('src/sass/**/*.scss', ['styles']);
-
-	// Watch JavaScript files
-	gulp.watch('src/js/*.js', ['scripts']);
-	gulp.watch('src/js/plugins/*.js', ['scripts-plugins']);
-	gulp.watch('src/js/vendor/*.js', ['scripts-vendor']);
-});
