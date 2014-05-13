@@ -10,13 +10,14 @@ var gulp = require('gulp'),
 	notify = require('gulp-notify'),
 	gutil = require('gulp-util'),
 	shell = require('gulp-shell'),
+	mustache = require("gulp-mustache"),
 	//Paths
 	sassSrc = 'src/scss/prototype.scss',
 	cssDest = 'target/css',
 	jsSrc = 'src/js/*.js',
 	jsPluginsSrc = "src/js/plugins/*.js",
 	jsVendorSrc = 'src/js/vendor/*.js',
-	jsDest = 'target/js',
+	jsDest = 'target/js'
 	
 	;
 
@@ -28,7 +29,6 @@ gulp.task('styles', function() {
 		}))
 		.on('error', gutil.log)
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(gulp.dest('css'))
 		.pipe(rename({
 			suffix: '.min'
 		}))
@@ -41,7 +41,7 @@ gulp.task('styles', function() {
 
 // Scripts task: JSHint & minify
 gulp.task('scripts', function() {
-	return gulp.src()
+	return gulp.src(jsSrc)
 		.pipe(concat('prototype.js'))
 		.pipe(rename({
 			suffix: '.min'
@@ -84,6 +84,12 @@ gulp.task('scripts-vendor', function() {
 		}));
 });
 
+gulp.task('init', function () {
+	return gulp.src('.')
+		.pipe(shell('mkdir -p target && mkdir -p target/js && mkdir -p target/css'))
+		.pipe(notify('Created Target Directories'));
+});
+
 // Clean
 gulp.task('clean', function() {
 	return gulp.src([jsDest, cssDest], {
@@ -93,7 +99,7 @@ gulp.task('clean', function() {
 });
 
 // Default
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean', 'init'], function() {
 	gulp.start('styles');
 	gulp.start('scripts');
 	gulp.start('scripts-plugins');
