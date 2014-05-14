@@ -6,9 +6,9 @@ Browser-based responsive wireframing framework, aimed at making the wireframing 
 #Philosophy
 The point of this project is to make it easy and fast to use native frameworks and tools to prototype and design websites.  Why would anyone want to do that, you ask?
 
-Working in the native medium is fast, cheap and it resolves misunderstandings up front.  It lets less technical users make more educated choices about the implementation process.
+Working in the native medium is fast, cheap and it resolves misunderstandings up front.  It lets less technical users make more educated choices about the design process.
 
-This kit is meant to be a backend-agnostic, easy to learn prototyping system.  You could call most desktop, GUI-based prototyping tools backend-agnostic.  Scratchtrack is intended to be easy to learn in the sense that you can apply your basic coding skills and get rough ideas down without having to learn yet another GUI.
+This kit is meant to be a backend-agnostic, easy to learn prototyping system.  You could call most desktop, GUI-based prototyping tools (hi and lo fidelity) backend-agnostic.  Scratchtrack is intended to be easy to learn in the sense that you can apply your basic coding skills and get rough ideas down without having to learn yet another GUI.
 
 ##Isn't it easier to just start drawing? (Spoiler: Also explains the name.)
 Some people think that way.  Others think structurally.  It's called scratchtrack, because back in the days of recording sound on tape, you'd sometimes need a throwaway track for all the other musicians to work off of.  Say you're the drummer and you have an idea for a riff, but you can't play production quality guitar.  You could lay down a throwaway track that the rest of the band can use to improvise their parts, and then everyone can contribute to the song.
